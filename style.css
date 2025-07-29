@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+h1, h2, h3 {
+    text-align: center;
+    color: #4CAF50;
+}
+form {
+    margin-bottom: 20px;
+}
+input[type="text"], input[type="password"], input[type="file"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #2c2c2c;
+    color: #e0e0e0;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover {
+    background-color: #45a049;
+}
+#document-list {
+    list-style-type: none;
+    padding: 0;
+}
+#document-list li {
+    background: #2c2c2c;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+}
+#document-list li:hover {
+    transform: scale(1.02);
+}
+#document-list a {
+    text-decoration: none;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    padding: 5px 15px;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+#document-list a:hover {
+    background: #4CAF50;
+    color: white;
+}
+.hidden {
+    display: none;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#search-input {
+    width: 70%;
+}
+#category-filter, #language-select {
+    width: 48%;
+    display: inline-block;
+}
+.rating {
+    color: #ffd700;
+}
+.comments-section {
+    margin-top: 10px;
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
+/* Additional friendly styles */
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
+}
+body.light-mode .container {
+    background: white;
+}
+body.light-mode input, body.light-mode select, body.light-mode textarea {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+body.light-mode #document-list li {
+    background: #eee;
+}
+body.light-mode .comments-section {
+    background: #f0f0f0;
+}

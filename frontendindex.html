@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Learning Document Sharing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <div id="header">
+            <h1 data-key="title">Global Learning Document Sharing</h1>
+            <select id="language-select" onchange="setLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="es">Español</option>
+                <option value="ko">한국어</option>
+                <option value="fr">Français</option>
+            </select>
+            <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+        
+        <!-- Login Section -->
+        <div id="login-section">
+            <h2 data-key="login">Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" required>
+                <input type="password" id="password" required>
+                <button type="submit" data-key="loginButton">Login</button>
+            </form>
+            <p data-key="noAccount">Don't have an account? <a href="#" id="register-link">Register</a></p>
+        </div>
+        
+        <!-- Register Section -->
+        <div id="register-section" class="hidden">
+            <h2 data-key="register">Register</h2>
+            <form id="register-form">
+                <input type="text" id="new-username" required>
+                <input type="password" id="new-password" required>
+                <input type="email" id="new-email" required>
+                <button type="submit" data-key="registerButton">Register</button>
+            </form>
+            <p data-key="haveAccount">Already have an account? <a href="#" id="login-link">Login</a></p>
+        </div>
+        
+        <!-- Main Section -->
+        <div id="main-section" class="hidden">
+            <h2 data-key="welcome">Welcome, <span id="user-display"></span>!</h2>
+            
+            <!-- Upload Document -->
+            <h3 data-key="uploadDocument">Upload Document</h3>
+            <form id="upload-form">
+                <input type="file" id="document" multiple required>
+                <input type="text" id="doc-title" required>
+                <textarea id="doc-description" required></textarea>
+                <select id="doc-category" required>
+                    <option value="">Select Category</option>
+                    <option value="Math">Math</option>
+                    <option value="Science">Science</option>
+                    <option value="History">History</option>
+                    <option value="Language">Language</option>
+                    <option value="Technology">Technology</option>
+                </select>
+                <button type="submit" data-key="uploadButton">Upload</button>
+            </form>
+            
+            <!-- Search and Filter -->
+            <input type="text" id="search-input" oninput="searchDocuments()">
+            <select id="category-filter" onchange="filterDocuments()">
+                <option value="">All Categories</option>
+                <option value="Math">Math</option>
+                <option value="Science">Science</option>
+                <option value="History">History</option>
+                <option value="Language">Language</option>
+                <option value="Technology">Technology</option>
+            </select>
+            
+            <!-- Document List -->
+            <h3 data-key="documentList">Document List</h3>
+            <ul id="document-list">
+                <!-- Dynamic -->
+            </ul>
+            
+            <!-- User Profile Link -->
+            <button id="profile-button" onclick="showProfile()">Profile</button>
+            <div id="profile-section" class="hidden">
+                <h3 data-key="profile">Profile</h3>
+                <p>Email: <span id="user-email"></span></p>
+            </div>
+            
+            <button id="logout" data-key="logout">Logout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
